@@ -1,0 +1,76 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug A1 Chat Client",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "a1_chat_client",
+            "cwd": "${workspaceFolder}",
+            "python": "${workspaceFolder}/.venv/bin/python",
+            "preLaunchTask": "Ensure Environment",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Debug A3 Chat Server",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "a3_chat_server",
+            "cwd": "${workspaceFolder}",
+            "python": "${workspaceFolder}/.venv/bin/python",
+            "preLaunchTask": "Ensure Environment",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Debug A5 HTTP Server",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "a5_http_server",
+            "cwd": "${workspaceFolder}",
+            "python": "${workspaceFolder}/.venv/bin/python",
+            "preLaunchTask": "Ensure Environment",
+            "console": "integratedTerminal",
+            "args": [
+                "-d ${input:serverDirectory}"
+            ]
+        },
+        {
+            "name": "Debug A6 DNS Server",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "a6_dns_server",
+            "cwd": "${workspaceFolder}",
+            "python": "${workspaceFolder}/.venv/bin/python",
+            "preLaunchTask": "Ensure Environment",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Debug A7 Unreliable Chat Client",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "a7_unreliable_chat",
+            "cwd": "${workspaceFolder}",
+            "python": "${workspaceFolder}/.venv/bin/python",
+            "preLaunchTask": "Ensure Environment",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Debug A8 Multiplayer Game",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "a8_game",
+            "cwd": "${workspaceFolder}",
+            "python": "${workspaceFolder}/.venv/bin/python",
+            "preLaunchTask": "Ensure Environment",
+            "console": "integratedTerminal"
+        },
+    ],
+    "inputs": [
+        {
+            "id": "serverDirectory",
+            "type": "promptString",
+            "description": "Which directory should be served?",
+            "default": "a5_http_server/public"
+        }
+    ]
+}

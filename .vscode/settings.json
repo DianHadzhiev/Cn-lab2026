@@ -1,0 +1,4 @@
+{
+  "cmdEnvironment": "source setup.sh",
+  "editor.suggest.showWords": false
+}
