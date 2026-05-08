@@ -1,4 +1,7 @@
 from argparse import Namespace, ArgumentParser
+import socket
+import select
+import threading
 
 
 def parse_arguments() -> Namespace:
@@ -29,6 +32,32 @@ def main() -> None:
     host: str = args.address
 
     # TODO: Your implementation here
+    server_sock = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+    inputs = [server_sock]
+    buffers = {}
+    clients = {}
+    users = {}
+
+    while True:
+        readable, _, _ = select.select([inputs], [], [])
+        for sock in readable:
+            if sock is server_sock:
+                conn, addr = sock.accept()
+                inputs.append(conn)
+                buffers[conn] = ""
+                clients[conn] = None
+            else:
+                data = sock.recv(4096)
+                if not data:
+                
+                else:
+                    buffers[sock] += data.decode()
+                    while "\n" in buffers[sock]:
+                        msg, buffers[sock] = buffers[sock].split("\n", 1)
+                        
+
+
+
 
 
 if __name__ == "__main__":

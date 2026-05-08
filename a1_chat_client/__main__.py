@@ -138,7 +138,7 @@ def handle_message(line):
         print(f"From {sender}: {message}")
     elif line.startswith("LIST-OK "):
         names = line[len("LIST-OK "):].split(',')
-        names = [n.strip() for n in names if n.strip()]
+        names = [n.strip() for n in names if n.strip()] #
         print(f"There are {len(names)} online users:")
         for n in names:
             print(n)
